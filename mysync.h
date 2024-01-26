@@ -1,6 +1,3 @@
-//  CITS2002 Project 2 2023
-//  Student1:   23364506   Anay Joshi
-//  Student2:   23435608   Kawin Ilam
 
 // Added headers
 #define _POSIX_C_SOURCE  200809L
