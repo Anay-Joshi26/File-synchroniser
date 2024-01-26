@@ -43,12 +43,6 @@ void copy_files(char *destination, char *source, time_t source_mod_time, mode_t 
         fclose(fp_out);
     }
 
-    // Change the file permissions, this will either be 0666 (default) or the newer file's permissions
-    if (chmod(destination, perm) != 0) {
-        perror("chmod");
-        exit(EXIT_FAILURE);
-    }
-
     // Update the modification time of the newly updated file to the modification time of the up-to-date file
     if (p_flag) {
         printf("For |%s| modification time -> %ld\n", destination, source_mod_time);
@@ -57,6 +51,11 @@ void copy_files(char *destination, char *source, time_t source_mod_time, mode_t 
 
         if (utime(destination, &new_time) != 0) {
             perror("utime");
+            exit(EXIT_FAILURE);
+        }
+
+        if (chmod(destination, perm) != 0) {
+            perror("chmod");
             exit(EXIT_FAILURE);
         }
     }
