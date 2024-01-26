@@ -1,9 +1,13 @@
 # File-synchroniser
 
 ●	The goal of this project was to design and develop a command-line utility program to synchronise the contents of two or more directories, so that all directories have the same content after..
+
 ●	Utilized C11 programming language features, POSIX function calls, and the make utility for project compilation and execution.
+
 ●	Implemented command-line options for flexibility, including handling hidden files, ignoring specific patterns, and providing verbose output.
+
 ●	Employed globbing for wildcard expansion in file patterns, converting them to regular expressions for matching filenames.
+
 ●	Supported features like recursive directory processing, preservation of file modification times and permissions, and selective file synchronization based on patterns.
 
 ## Usage
